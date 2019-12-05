@@ -45,11 +45,38 @@
 		background: #f3db09;
 		color: blue;
 	}
-	/* ----- 3.id选择器 ----- */
+	/* ----- 3.id选择器 ----- 
+	用id选择器将第一个p标签设置字体大小为28px，字体颜色为red, 首行文本缩进30px。
+	*/
+	#p1{
+		font-size: 28px;
+		color: red ; 
+		text-indent: 30px;
+	}
 	
-	/* ----- 4.后代选择器 ----- */
+	
+	/* ----- 4.后代选择器 ----- 
+	为p元素内部的所有span元素，设置字体大小为20px,字体颜色为红色,背景颜色为pink;
+	*/
+	p span {
+		font-size: 20px;
+		color: red;
+		background: pink;
+	}
 
-	/* ----- 5.属性选择器 ----- */
+	/* ----- 5.属性选择器 ----- 
+	为所有的文本输入框，设置背景颜色为#FF7CCC、字体大小30px，首行文本缩进30px；
+	*/
+	input[type="text"] {
+		background: #FF7CCC;
+		font-size:30px ;  
+		text-indent: 30px;
+	}
+	/* 两个条件 */
+	input[type="text"][name="email"]{
+		background: #ff0011;
+	}
+	
 
 </style>
 </head>
@@ -65,7 +92,7 @@
 	<span class="c1">span222</span> 
 	<span class="c1">span333</span> 
 	
-	<p>
+	<p id="p1">
 		ppp111
 		<span>这是一个span</span>
 		这是一个P元素
@@ -75,7 +102,8 @@
 		<span>这是一个span</span>
 		这是一个P元素
 	</p>
-	<input type="text" name="user"/>
+	<input type="text" name="user"/> <br>
+	<input type="text" name="email">
 	<input type="button" value="按钮1" />
 	<input type="button" value="按钮2" />
 </body>
