@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title> login out O(∩_∩)O~~ </title>
 </head>
 <style type="text/css">
 	table,td{
@@ -12,18 +12,19 @@
 		
 	}
 	table{
-		width:70%; /* 设置表格宽度 */
+		width:25%; /* 设置表格宽度 */
 		margin:0px auto;/* 设置表格居中 */
 		background:pink;/* 设置表格背景颜色 */
 		border-left: auto ; 
 		border-right: auto ; 
 	}
-	td{
-		padding:10px;/* 设置单元格边框和内容之间的距离 */
+	td,th{
+		padding:5px;/* 设置单元格边框和内容之间的距离 */
 	}
 	h1{
 		width:70%; /* 设置表格宽度 */
 		margin:5px auto;/* 设置表格居中 */
+		text-align: center;
 	}
 </style>
 <body>
@@ -35,28 +36,61 @@
 			<tr>
 				<td>用户名：</td><!-- 用户 -->
 				<td>
-					<input type="text">
+					<input type="text" name="username">
 				</td>
 			</tr>
 			<tr>
 				<td>密码：</td> <!--  密码 -->
 				<td>
-					<input type="password">
+					<input type="password" name="password">
 				</td>
 			</tr>
 			<tr>
 				<td>性别：</td> <!--  性别 -->
-				<td>
-					<input type="radio">男
-					<input type="radio">女
+				<td >
+					<input type="radio" checked="checked" 
+					name="gender" value="male">男
+					<input type="radio"
+					name="gender" value="female">女
 				</td>
 			</tr>
 			<tr>
 				<td>爱好：</td> <!--  爱好 -->
 				<td>
-					<input type="checkbox">篮球
-					<input type="checkbox">足球
+					<input type="checkbox" name="hobby" 
+					value="basketball">篮球
+					<input type="checkbox" name="hobby" checked="checked" 
+					value="football">足球
+					<input type="checkbox" name="hobby" 
+					value="velloyball">排球
 				</td>
+			</tr>
+			<tr>
+				<td>城市：</td> <!--  城市 -->
+				<td>
+					<select name="city">
+						<option>北京</option>
+						<option>上海</option>
+						<option selected="selected">广州</option>
+						<option>深圳</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>自我描述：</td> <!--  自我描述 -->
+				<td>
+					<textarea name="count"  
+					rows="5" cols="30" 
+					placeholder="请输入描述信息..." ></textarea>
+				</td>
+			</tr>
+			<tr><!-- 用于提交表单 -->
+				<td colspan="2" style="text-align: center">
+				<!-- colspan：指定单元格横跨的列数 -->
+				<!-- rowspan：指定单元格横跨的行数 -->
+				
+					<input type="submit" value="提交 ( ⊙ o ⊙ )！">
+				</td> 
 			</tr>
 			
 		</table>
