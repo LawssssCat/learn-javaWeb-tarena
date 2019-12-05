@@ -1,0 +1,13 @@
+@charset "UTF-8";
+/* 3.通过link标签引入外部的css文件，为p元素设置样式如下： 
+	边框: 2px solid blue;
+	字体颜色:red
+	字体设置为华文琥珀
+	设置首行文本缩进50px
+ */
+p{
+	border:2px solid blue;
+	color: red;
+	font-family: "华文琥珀" ;
+	text-indent: 50px;
+}
