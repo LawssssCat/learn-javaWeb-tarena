@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JS的语句</title>
+	<script type="text/javascript">
+		var col = function(num1,num2,opt){
+			switch(opt){
+			case "+":
+				alert("两个数的和为："+(num1+num2));
+				break;
+			case "-":
+				alert("两个数的减为："+(num1-num2));
+				break;
+			case "*":
+				alert("两个数的乘为："+(num1*num2));
+				break;
+			case "/":
+				alert("两个数的和为："+(num1/num2));
+				break;
+			default :
+				alert("输入有误！");
+			}
+		}
+		/*
+			实现一个简易的计算器：
+				可以接收用户输入的两个数值和一个操作符(+、-、*、/)，
+				根据操作符号的不同，
+				对两个数值执行不同的运算。
+		*/
+		//第一种实现：
+		/*	
+		var num1 = prompt("请输入数值1");
+		num1 = parseFloat(num1);
+		var num2 = prompt("请输入数值2");
+		num2 = parseFloat(num2);
+		var opt = prompt("请输入操作符(+、-、*、/)");
+		col(num1,num2,opt);
+		*/
+		
+
+
+		//第二种实现：
+		var s1 = prompt("请输入两个数值和一个运算符，用逗号分隔，如(1,2,+)");
+		var arr = s1.split(",");
+		var num1 = arr[0]-0;
+		var num2 = arr[1]-0;
+		var opt = arr[2];
+		col(num1,num2,opt);
+
+
+	</script>
+</head>
+<body>
+</body>
+</html>

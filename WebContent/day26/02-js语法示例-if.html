@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JS的语句</title>
+	<script type="text/javascript">
+		/*
+			80~100(包括80，也包括100)			优秀 
+			60~80(包括60，但不包括80)			中等
+			0~60(包括0，但不包括60)			不及格
+			其他值							输入有误
+		*/
+		var score = prompt("请输入您的成绩："); //会有弹框，提示信息
+		if(score >= 80 && score <= 100 ){
+			alert("您的成绩属于：优秀！");
+		}
+		else if(score>=60 && socre<80){
+			alert("您的成绩属于：中等！");
+		}
+		else if(score>=0 && socre<60){
+			alert("您的成绩属于：不及格！");
+		}
+		else{
+			alert("输入有误！");
+		}
+
+	</script>
+</head>
+<body>
+</body>
+</html>
