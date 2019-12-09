@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery-测试 O(∩_∩)O~~</title>
+<!-- 引入jQuery库文件(js文件) -->
+<script type="text/javascript" src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
+<!-- <script type="text/javascript" src="resource/jquery-1.8.3.min.js"></script> -->
+<script type="text/javascript">
+	//$() 什么意思？
+	//$() == jQuery()
+	$(function() { // 这个函数会在页面加载完后，才执行。所以会先执行下面的 alert(13);
+	//这jQuery提供的文档就绪事件 函数。
+		alert("看到这个弹框，表明整个页面都加载完毕!");
+	});	
+
+	alert(13);
+</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>创建表格</title>
+
+<style type="text/css">
+	/* 为表格定义CSS样式 */
+	body{padding-left:15px;font-size:20px;}
+	table{ border:1px solid #0099FF; width:70%; border-collapse:collapse; }
+	table td{ border:#0099FF 1px solid; padding:10px 20px 3px 1px; }
+	input[type='text']{width:150px;height:20px;vertical-align:text-bottom;text-indent:5px;font-size:20px;}
+	input[type='button']{font-size:20px;}
+</style>
+
+<!-- 引入jquery函数库文件 -->
+<script src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
+<script type="text/javascript">
+function createTable0(row,col){		
+		var table = $("<table></table>");
+		for(var b=0 ; b<row ; b++){
+			var tr = $("<tr></tr>");
+			for(var i=0 ; i<col ; i++){
+				var td = $("<td>创建5行6列的表格</td>");
+				tr.append(td);
+			}
+			table.append(tr); 
+		}
+		$("body").append(table);
+		$("body").append("<hr>");
+	}
+	/** 练习1：创建单行单列的表格 */
+	function createTable1(){
+		createTable0(0,0);
+	}
+
+	/** 练习2：创建5行6列的表格 */
+	function createTable2(){	
+		createTable0(5,6);
+	}
+
+	/** 练习3：创建指定行和列的表格 */
+	function createTable3(){
+		var row = document.getElementById("row").nodeValue ; 
+		var col = document.getElementById("col").nodeValue; 
+		
+		createTable0(row,col);
+		
+	}
+</script>
+</head>
+<body>
+	<!-- 练习1：点击下列按钮创建单行单列表格 -->
+	<input type="button" value="点击下列按钮创建单行单列表格" onclick="createTable1()"><br><br>
+
+	<!-- 练习2：点击下列按钮创建5行6列表格 -->
+	<input type="button" value="点击下列按钮创建5行6列表格" onclick="createTable2()"><br><br>
+	
+
+	<!-- 练习3：点击下列按钮创建指定行、指定列的表格 -->
+	<input type="button" value="点击下列按钮创建指定行、指定列的表格" onclick="createTable3()"><br>
+	行数：<input id="row" type="text"><br>
+	列数：<input id="col" type="text"><br>
+	<!-- 将创建的表格添加到body内部(追加到最后) --><hr/>
+	
+	
+	
+</body>
+</html>
