@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <display-name>learn-javaWeb-tarena</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <!-- ====================================== -->
+  <servlet>
+    <description></description>
+    <display-name>HelloServlet</display-name>
+    <servlet-name>HelloServlet</servlet-name>
+    <servlet-class>cn.edut.day30.HelloServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HelloServlet</servlet-name>
+    <url-pattern>/HelloServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <description></description>
+    <display-name>TestServlet</display-name>
+    <servlet-name>TestServlet</servlet-name>
+    <servlet-class>cn.edut.day30.TestServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TestServlet</servlet-name>
+    <url-pattern>/TestServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>TestJSTL</display-name>
+    <servlet-name>TestJSTL</servlet-name>
+    <servlet-class>cn.edut.day30.TestJSTL</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TestJSTL</servlet-name>
+    <url-pattern>/TestJSTL</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>HomeWork1</display-name>
+    <servlet-name>HomeWork1</servlet-name>
+    <servlet-class>cn.edut.day30.HomeWork1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HomeWork1</servlet-name>
+    <url-pattern>/HomeWork1</url-pattern>
+  </servlet-mapping>
+    <servlet>
+    <description></description>
+    <display-name>TestEL</display-name>
+    <servlet-name>TestEL</servlet-name>
+    <servlet-class>cn.edut.day30.TestEL</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TestEL</servlet-name>
+    <url-pattern>/TestEL</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DoorList</display-name>
+    <servlet-name>DoorList</servlet-name>
+    <servlet-class>cn.edut.day30.DoorList</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DoorList</servlet-name>
+    <url-pattern>/DoorList</url-pattern>
+  </servlet-mapping>
+</web-app>

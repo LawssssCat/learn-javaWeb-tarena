@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>全选或全不选</title>
+<meta charset="utf-8"/>
+<style type="text/css">
+	body{font-family: "微软雅黑"}
+	div#box1, div#box2 {text-align:center;}
+	table{text-align: center;border-collapse:collapse;}
+	td,th{padding:10px 30px;}
+	th{background-color: #DCDCDC;}
+</style>
+
+<!--引入jquery的js库-->
+<script src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
+<script type="text/javascript">
+	/** 练习1：点击全选设置 员工所在的行全选或者全不选 */
+	function checkAll(){
+		//1.获取全选框的选中状态(选中true 取消false)
+		var status = $("#all").prop("checked") ; 
+		console.log(status);
+		var is = $("input[name='item']") ; 
+		console.log(is.length);
+
+		$("input[type='checkbox']:not(#all)").prop("checked" , status);
+		// for(var i=0 ; i<is.length ; i++ ){
+		// 	var e = is.eq(i);
+		// 	console.log(e.prop("checked"));
+		// 	e.prop("checked" , status)  ;
+		// }
+
+
+	}
+	
+	/** 练习2：点击按钮,计算所有被选中商品的总金额 */
+	function getSum(){
+		var sum = 0 ; 
+		$("input[name='item']:checked").each(function() {
+			sum+=$(this).val()-0;
+		});
+		$("#count").html(sum);
+	}
+</script>
+</head>
+
+<body>
+	<h2>员工列表</h2>
+	<table border="1">
+		<tr>
+			<th><!-- 全选复选框 -->
+				<input type="checkbox" id="all" onclick="checkAll()"/>
+			</th>
+			<th>商品名称</th>
+			<th>分类</th>
+			<th>价格</th>
+		</tr>
+		<tr>
+			<td><!-- 以下为普通复选框 -->
+				<input type="checkbox" name="item" value="1200"/>
+			</td>
+			<td>三星硬盘</td>
+			<td>电脑配件</td>
+			<td>1200</td>
+		</tr>
+		<tr>
+			<td><!-- 以下为普通复选框 -->
+				<input type="checkbox" name="item" value="1700"/>
+			</td>
+			<td>海尔洗衣机</td>
+			<td>家用电器</td>
+			<td>1700</td>
+		</tr>
+		<tr>
+			<td><!-- 以下为普通复选框 -->
+				<input type="checkbox" name="item" value="3100"/>
+			</td>
+			<td>格力空调</td>
+			<td>家用电器</td>
+			<td>3100</td>
+		</tr>
+		<tr>
+			<td><!-- 以下为普通复选框 -->
+				<input type="checkbox" name="item" value="5200"/>
+			</td>
+			<td>联想笔记本</td>
+			<td>电脑办公</td>
+			<td>5200</td>
+		</tr>
+		<tr>
+			<td><!-- 以下为普通复选框 -->
+				<input type="checkbox" name="item" value="6300"/>
+			</td>
+			<td>iphone手机</td>
+			<td>电子数码</td>
+			<td>6300</td>
+		</tr>
+	</table> <br/>
+	<input type="button" value="总金额为:" onclick="getSum()"/>&nbsp;
+	<span id="count">0</span>&nbsp;元
+</body>
+</html>
+
+
+

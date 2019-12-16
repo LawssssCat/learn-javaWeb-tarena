@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
+<script>
+    //下面这个onload()，是浏览器调用的。
+    //js提供，文档就绪事件函数：
+    //        在浏览器加载完整个网页后，立即执行function
+    //window.onload = function(){
+    //     var h1 = document.getElementById("d1");
+    //     alert(h1.innerHTML);     
+    // };
+
+    //jQuery提供的文档就绪事件函数：
+    //方式一：最简单
+    // $(function(){
+    //     var h1 = document.getElementById("d1");
+    //     alert(h1.innerHTML);        
+    // });
+
+    //方式二：完整写法
+    $(document).ready(function(){
+        //在整个html网页被加载完成后，立即执行。
+        var h1 = document.getElementById("d1");
+        alert(h1.innerHTML);     
+    })
+
+
+
+</script>
+</head>
+<body>
+    <h1 id="d1">Hello jQuery!</h1>
+</body>
+</html>

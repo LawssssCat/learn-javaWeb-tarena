@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/*
+	(1)声明一个函数fn，在函数中实现：
+	    遍历指定的两个数值之间的整数，
+	    将是3的倍数的数值存入到一个数组中，
+	    并将数组返回
+	(2)调用fn函数，
+	    获取1~100之间是3的倍数的数值，
+	    将返回的数组中的元素遍历输出到网页上
+	 */
+	window.onload = function() {
+		function fn(min, max) {
+			var arr = [];
+			for (var i = min + 1; i < max; i++) {
+				if (i % 3 == 0) {
+					arr.push(i);
+				}
+			}
+			return arr;
+		}
+		function show(arr) {
+			for (var i = 0; i < arr.length; i++) {
+				var e = document.createElement("p");
+				e.innerHTML = arr[i];
+                document.body.appendChild(e);
+				//alert(document.body);
+			}
+		}
+		var arr = fn(0, 100);
+        show(arr);
+	}
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

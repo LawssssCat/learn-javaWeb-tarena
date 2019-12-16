@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JS的语句</title>
+	<script type="text/javascript">
+		/* 
+			声明一个函数fn，在函数中实现：
+				遍历指定的两个数值(例如1和100)之间的整数，
+				将是3的倍数的数值存入到一个数组中，并将数组返回。
+		*/
+		var fn = function(arr){
+			var sum = 0 ;
+			for(var i=0 ; i<arr.length ; i++){
+				if(arr[i]%3==0){
+					sum+=arr[i];
+				}
+			}
+			return sum ; 
+		}
+
+		var arr = [1,2,3,4,5,6,7,8,9];
+
+		var result = fn(arr);
+		alert(result); //18
+	</script>
+</head>
+<body>
+</body>
+</html>
