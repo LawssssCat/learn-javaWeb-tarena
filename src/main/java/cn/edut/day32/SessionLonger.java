@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -33,10 +34,18 @@ public class SessionLonger extends HttpServlet {
 		//不加这个，有中文，一定乱码
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
+		
+		
+		
 		String msg = request.getParameter("msg");
 		
 		HttpSession session = request.getSession();
 		session.setAttribute("msg", msg);
+		
+		
+		Cookie cookie = new Cookie("JSESSIONID", session.getId());
+		cookie.setMaxAge(30*24*60*1000);
+		response.addCookie(cookie);
 		
 		
 		response.sendRedirect("day32/session_longer.jsp");
