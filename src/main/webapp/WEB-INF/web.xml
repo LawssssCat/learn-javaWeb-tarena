@@ -9,8 +9,6 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
-  <!-- ====================================== -->
   <servlet>
     <description></description>
     <display-name>HelloServlet</display-name>
@@ -21,8 +19,6 @@
     <servlet-name>HelloServlet</servlet-name>
     <url-pattern>/HelloServlet</url-pattern>
   </servlet-mapping>
-  
-  
   <servlet>
     <description></description>
     <display-name>TestServlet</display-name>
@@ -33,7 +29,6 @@
     <servlet-name>TestServlet</servlet-name>
     <url-pattern>/TestServlet</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <description></description>
     <display-name>TestJSTL</display-name>
@@ -54,7 +49,7 @@
     <servlet-name>HomeWork1</servlet-name>
     <url-pattern>/HomeWork1</url-pattern>
   </servlet-mapping>
-    <servlet>
+  <servlet>
     <description></description>
     <display-name>TestEL</display-name>
     <servlet-name>TestEL</servlet-name>
@@ -73,5 +68,55 @@
   <servlet-mapping>
     <servlet-name>DoorList</servlet-name>
     <url-pattern>/DoorList</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CartServlet</display-name>
+    <servlet-name>CartServlet</servlet-name>
+    <servlet-class>cn.edut.day32.CartServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CartServlet</servlet-name>
+    <url-pattern>/CartServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>PayServlet</display-name>
+    <servlet-name>PayServlet</servlet-name>
+    <servlet-class>cn.edut.day32.PayServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PayServlet</servlet-name>
+    <url-pattern>/PayServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CartServlet_session</display-name>
+    <servlet-name>CartServlet_session</servlet-name>
+    <servlet-class>cn.edut.day32.CartServlet_session</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CartServlet_session</servlet-name>
+    <url-pattern>/CartServlet_session</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>PayServlet_session</display-name>
+    <servlet-name>PayServlet_session</servlet-name>
+    <servlet-class>cn.edut.day32.PayServlet_session</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PayServlet_session</servlet-name>
+    <url-pattern>/PayServlet_session</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SessionLonger</display-name>
+    <servlet-name>SessionLonger</servlet-name>
+    <servlet-class>cn.edut.day32.SessionLonger</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SessionLonger</servlet-name>
+    <url-pattern>/SessionLonger</url-pattern>
   </servlet-mapping>
 </web-app>

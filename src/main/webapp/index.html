@@ -2,19 +2,61 @@
 <html>
 
 <head>
+	<!-- 指定字符集 -->
 	<meta charset="UTF-8">
+	<!-- 使用Edge最新的浏览器的渲染方式 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+	<!-- viewport视口：网页可以根据设置的宽度自动进行适配，在浏览器的内部虚拟一个容器，容器的宽度与设备的宽度相同。
+	 	width：默认宽度与设备的宽度相同
+	 	initial-scale：初始化缩放比，为1:1
+	-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
 	<title>首页 O(∩_∩)O~~</title>
+	<!-- 1.导入CSS的全局样式 -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<!-- 2.jQuery导入，建议使用1.9以上的版本 -->
+	<script src="js/jquery-3.4.1.min.js" type="text/javascript" ></script>
+	<!-- 3.导入bootstrap的js文件 -->
+	<script src="js/bootstrap.min.js" type="text/javascript"></script>
+
+	<script type="text/javascript">
+	$(document).ready(function(){
+		//$("td").fadeIn(3000)
+	});
+	$(function() {
+		$("a").addClass("btn btn-default btn-sm myclass" );  //aClass在css文件中定义
+		//var tr = $("tr").children("td").;
+		$("tr").children("td:first-child").css("text-align" , "center") ;
+		$("tr").children("th:first-child").css("text-align" , "center") ;
+		//${".success"}.css("text-align" , "center");
+	});
+		//
+		//
+	</script>
+	
+	<style type="text/css">
+	th,td{
+		font-size:larger;
+		align-content: center;
+	}
+	</style>
+
 </head>
 
 <body>
-
-	<table border="1">
+<div align="center" class="container">
+	<table border="100"   class="table table-bordered table-hover">
+		<tr class="success">
+			<th>练习</th>
+			<th>链接</th>
+		</tr>
 		<tr>
 			<td>
 				表格练习：
 			</td>
 			<td>
-				<a href="day24/loginout_table.html" target="_blank">loginout_table</a>
+				<a href="day24/loginout_table.html"  target="_blank">loginout_table</a>
 			</td>
 		</tr>
 		<tr>
@@ -95,10 +137,15 @@
 				<a href="day30/04-el.jsp">EL - 虚拟对象</a><br>
 				<a href="day30/jstl1.jsp">JSTL-语法</a><br>
 				<a href="day30/jstl-test.jsp">综合练习 - el jstl </a><br>
-				<a href="TestJSTL">TestJSTL</a><br>
+				<a href="TestJSTL">day31/TestJSTL</a><br>
+				<a href="day32/prodList.jsp">day32/prodList.jsp - 【购物车案例】</a><br>
+				<a href="day32/prodLilst-session.jsp">day32/prodLilst-session.jsp - 【购物车案例 - Session实现】</a><br>
+				<a href="day32/session_longer.jsp">session 持久保存</a><br>
 			</td>
 		</tr>
 	</table>
+	
+</div>
 </body>
 
 </html>
