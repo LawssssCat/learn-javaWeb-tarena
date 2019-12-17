@@ -8,7 +8,7 @@
 <title></title>
 </head>
 <body>
-	pageContext.request.contextPath : ${pageContext.request.contextPath }
+	pageContext.request.contextPath : ${pageContext.request.contextPath }<br>
 	<!-- 开始光标位置 -->
 	<h3>点击商品链接，可以将商品加入购物车</h3>
 	<%--cart 购物车 --%>
@@ -28,8 +28,11 @@
 	</c:forEach>
 	已选：${str }
 	<br>
-	
-	
+	---<br>
+	当前cookies:<br>
+	<c:forEach items="${pageContext.request.cookies }" var="c">
+	${c.name } - ${c.value } <br>
+	</c:forEach>
 	<hr>
 	<h3>点击支付链接，可以对购物车商品进行结算</h3>
 	<p><a href="${pageContext.request.contextPath }/PayServlet">支付</a></p>

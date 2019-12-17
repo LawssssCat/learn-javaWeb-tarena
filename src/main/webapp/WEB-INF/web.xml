@@ -89,4 +89,34 @@
     <servlet-name>PayServlet</servlet-name>
     <url-pattern>/PayServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CartServlet_session</display-name>
+    <servlet-name>CartServlet_session</servlet-name>
+    <servlet-class>cn.edut.day32.CartServlet_session</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CartServlet_session</servlet-name>
+    <url-pattern>/CartServlet_session</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>PayServlet_session</display-name>
+    <servlet-name>PayServlet_session</servlet-name>
+    <servlet-class>cn.edut.day32.PayServlet_session</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PayServlet_session</servlet-name>
+    <url-pattern>/PayServlet_session</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SessionLonger</display-name>
+    <servlet-name>SessionLonger</servlet-name>
+    <servlet-class>cn.edut.day32.SessionLonger</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SessionLonger</servlet-name>
+    <url-pattern>/SessionLonger</url-pattern>
+  </servlet-mapping>
 </web-app>
