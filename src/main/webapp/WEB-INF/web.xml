@@ -119,4 +119,14 @@
     <servlet-name>SessionLonger</servlet-name>
     <url-pattern>/SessionLonger</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>YongHeServlet</display-name>
+    <servlet-name>YongHeServlet</servlet-name>
+    <servlet-class>cn.edut.servlet.YongHeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>YongHeServlet</servlet-name>
+    <url-pattern>/YongHeServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
