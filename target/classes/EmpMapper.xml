@@ -7,7 +7,15 @@
 	namespace一般指定为当前文件的所在包路径+文件名（将来是接口名）
 	在程序中通过[ namespace + id ]定位到执行哪一条SQL语句
  -->
-<mapper namespace="">
+ 
+ <!-- namespace、id 是定位标识！！重要！ -->
+<mapper namespace="EmpMapper">
 	<!-- 提示的来源：头文件中"http://mybatis.org/dtd/mybatis-3-mapper.dtd" 提供 -->
 	<!-- 如果没有提示，通过配置xml代理获取。 -->
+	
+	<!-- 练习1. 查询所有员工信息 -->
+	<select id="findAll" resultType="cn.edut.pojo.Empolyee">
+		select * from emp ;
+	</select>
+	
 </mapper>

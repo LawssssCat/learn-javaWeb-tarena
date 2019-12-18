@@ -5,6 +5,8 @@ public class Empolyee {
 	private String name ; 
 	private String job ; 
 	private Double salary ;
+	
+	
 	public Integer getId() {
 		return id;
 	}
@@ -31,8 +33,7 @@ public class Empolyee {
 	}
 	@Override
 	public String toString() {
-		return "Empolyee [getId()=" + getId() + ", getName()=" + getName() + ", getJob()=" + getJob() + ", getSalary()="
-				+ getSalary() + "]";
+		return "Empolyee [id=" + id + ", name=" + name + ", job=" + job + ", salary=" + salary + "]";
 	}
 
 	
