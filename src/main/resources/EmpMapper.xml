@@ -46,7 +46,7 @@
 		delete from emp where name='刘德华'
 	</delete>
 	
-	<!-- ==================  day 34  =================== -->
+	<!-- ==================  day 34  ##### 动态SQL ##### =================== -->
 	<!-- 练习：新增员工信息：张飞 Java开发工程师 15000 -->
 	<insert id="insert2">
 		insert into emp values( null , #{name} , #{job} , #{salary} ) 
@@ -63,6 +63,7 @@
 		delete from  emp where name = #{name}
 	</delete>
 	
+	
 	<!-- 练习9:动态指定要查询的列 -->
 	<select id="findSomeCols" resultType="cn.edut.pojo.Empolyee">
 		select ${cols} from emp ; 
@@ -74,5 +75,56 @@
 	<select id="findByNameLike2" resultType="cn.edut.pojo.Empolyee">
 		select * from emp  where name like #{name} ; 
 	</select>
+	
+	<!-- 练习12:  -->
+	<!-- 
+		小于号< &lt;
+		大于号> &gt;
+	 -->
+	 <!-- 注意：1=1 -->
+	<select id="findInRange" resultType="cn.edut.pojo.Empolyee">
+		select * from emp
+		<where>
+		<if test="min!=null">
+		and salary &gt;= #{min}
+		</if>
+		<if test="max!=null">
+		and salary &lt;= #{max} ;
+		</if>
+		</where>
+	</select>
+	
+	<!-- 练习：根据参数传递与否，修改值 -->
+	<update id="updateByArgs">
+		update emp 
+		<set>
+		 <if test="name!=null">
+		 	name = #{name} , 
+		 </if> 
+		 <if test="job!=null">
+		 job = #{job} , 
+		 </if>
+		 <if test="salary!=null">
+		 	salary = #{salary} , 
+		 </if>
+		</set>
+		where id=#{id} ; 
+	</update>
+	
+	<update id="updateBatch"> 
+		update emp set salary=salary+2000 
+		where id in 
+		<foreach collection="a" open="(" close=")" item="i" separator=",">
+			#{i}  
+		</foreach>
+	</update>
+	
+	<delete id="deleteBatch">
+		delete from emp 
+		where id in 
+		<foreach collection="list" open="(" close=")" item="i" separator=",">
+			#{i} 
+		</foreach>
+	</delete>
 	
 </mapper>

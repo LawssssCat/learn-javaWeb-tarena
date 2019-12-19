@@ -45,7 +45,7 @@
 	<!-- 定义映射器 -->
 	<mappers>
 		 <!-- 使用这个方案，可以 单独 指定 Mapper的位置 -->  
-		<mapper resource="EmpMapper.xml" />
+		<mapper resource="MyMapper.xml" />
 		
 	</mappers>
 </configuration>
