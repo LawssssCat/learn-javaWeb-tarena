@@ -7,6 +7,16 @@ public class Empolyee {
 	private Double salary ;
 	
 	
+	public Empolyee() {
+		super();
+	}
+	public Empolyee(Integer id, String name, String job, Double salary) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.job = job;
+		this.salary = salary;
+	}
 	public Integer getId() {
 		return id;
 	}
