@@ -12,7 +12,10 @@
 <mapper namespace="EmpMapper">
 	<!-- 提示的来源：头文件中"http://mybatis.org/dtd/mybatis-3-mapper.dtd" 提供 -->
 	<!-- 如果没有提示，通过配置xml代理获取。 -->
+
+
 	
+	<!-- ==================  day 33  =================== -->
 	<!-- 练习1. 查询所有员工信息 -->
 	<select id="findAll" resultType="cn.edut.pojo.Empolyee">
 		select * from emp ;
@@ -43,5 +46,33 @@
 		delete from emp where name='刘德华'
 	</delete>
 	
+	<!-- ==================  day 34  =================== -->
+	<!-- 练习：新增员工信息：张飞 Java开发工程师 15000 -->
+	<insert id="insert2">
+		insert into emp values( null , #{name} , #{job} , #{salary} ) 
+	</insert>
+	
+	
+	<!-- 练习：修改员工信息：张飞  架构师 25000 -->
+	<update id="update2">
+		update emp set job=#{job} , salary=#{salary} where name=#{name} 
+	</update>
+	
+	<!-- 练习：删除 emp 表中指定 id 的员工信息 -->
+	<delete id="delete2">
+		delete from  emp where name = #{name}
+	</delete>
+	
+	<!-- 练习9:动态指定要查询的列 -->
+	<select id="findSomeCols" resultType="cn.edut.pojo.Empolyee">
+		select ${cols} from emp ; 
+	</select>
+	
+	<select id="findByNameLike1" resultType="cn.edut.pojo.Empolyee">
+		select * from emp  where name like '%${name}%' ; 
+	</select>
+	<select id="findByNameLike2" resultType="cn.edut.pojo.Empolyee">
+		select * from emp  where name like #{name} ; 
+	</select>
 	
 </mapper>

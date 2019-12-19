@@ -129,4 +129,7 @@
     <servlet-name>YongHeServlet</servlet-name>
     <url-pattern>/YongHeServlet</url-pattern>
   </servlet-mapping>
+  <listener>
+    <listener-class>cn.edut.listeners.SpringServletContextLinstener</listener-class>
+  </listener>
 </web-app>
