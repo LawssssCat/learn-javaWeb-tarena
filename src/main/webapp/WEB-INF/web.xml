@@ -9,6 +9,41 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+  
+  <!-- 配置当前 Web 应用的初始化参数 -->
+  <context-param>
+  	<param-name>driver</param-name>
+  	<param-value>com.mysql.jdbc.Driver</param-value>
+  </context-param>
+	<context-param>
+		<param-name>jdbcUrl</param-name>
+		<param-value>jdbc:mysql://127.0.0.1:3306/spring?characterEncoding=utf8</param-value>
+	</context-param>  
+  
+  
+  <servlet>
+  	<servlet-name>hs</servlet-name>
+  	<servlet-class>com.edut.HelloServlet</servlet-class>
+  	<!-- 配置 Servlet 的初始化参数 -->
+  	<init-param>
+  		<param-name>user</param-name>
+  		<param-value>root</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>password</param-name>
+  		<param-value>root</param-value>
+  	</init-param>
+  	
+  	<!-- 可以指定 Servlet 被创建的时机 -->
+  	<load-on-startup>-1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>hs</servlet-name>
+  	<url-pattern>/hs</url-pattern>
+  </servlet-mapping>  
+  
+  
   <servlet>
     <description></description>
     <display-name>HelloServlet</display-name>
