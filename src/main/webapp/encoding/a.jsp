@@ -7,11 +7,10 @@
 <title></title>
 </head>
 <body>
-<%
-	System.out.println("jsp 。。。 ") ; 
-%>
-
 <!-- 开始光标位置 -->
-<h3>Hello ~ ${param.username }</h3>
+<form action="b.jsp" method="post">
+	name:<input type="text" name="name">
+	<input type="submit" value="发送">
+</form>
 </body>
 </html>

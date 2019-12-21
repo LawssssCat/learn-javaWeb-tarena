@@ -7,11 +7,8 @@
 <title></title>
 </head>
 <body>
-<%
-	System.out.println("jsp 。。。 ") ; 
-%>
-
 <!-- 开始光标位置 -->
-<h3>Hello ~ ${param.username }</h3>
+<hr>
+<jsp:include page="/my/hello.jsp"></jsp:include>
 </body>
 </html>

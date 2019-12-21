@@ -7,11 +7,11 @@
 <title></title>
 </head>
 <body>
-<%
-	System.out.println("jsp 。。。 ") ; 
-%>
-
 <!-- 开始光标位置 -->
-<h3>Hello ~ ${param.username }</h3>
+	<a href="a.jsp">AAA</a> <br><br>
+	<a href="b.jsp">BBB</a> <br><br>
+	<a href="c.jsp">CCC</a> <br><br>
+	<a href="d.jsp">DDD</a> <br><br>
+	<a href="e.jsp">EEE</a> <br><br>
 </body>
 </html>

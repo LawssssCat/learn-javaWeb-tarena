@@ -162,6 +162,12 @@
 			<td>
 				<a href="test.jsp">filter</a><br>
 				<a href="my/login.jsp">login - filter </a><br>
+				<a href="my/dispatcher.jsp">dispatcher.jsp</a><br>
+				<a href="my/include.jsp">include.jsp</a><br>
+				<a href="my/error.jsp">error.jsp</a><br>
+				<a href="cache/a.html">cache</a><br>
+				<a href="encoding/a.jsp">encoding</a><br>
+				<a href="login/a.jsp">检查用户是否登录？</a><br>
 			</td>
 		</tr>
 	</table>

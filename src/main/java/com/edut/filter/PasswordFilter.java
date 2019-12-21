@@ -44,6 +44,9 @@ public class PasswordFilter implements Filter {
 		
 		System.out.println("登录成功！");
 		chain.doFilter(request, response);
+		System.out.println("after dofilter ... password ... ");
+		
+		
 	}
 
 	private FilterConfig fConfig  ; 

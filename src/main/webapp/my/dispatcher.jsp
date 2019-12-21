@@ -7,11 +7,7 @@
 <title></title>
 </head>
 <body>
-<%
-	System.out.println("jsp 。。。 ") ; 
-%>
-
 <!-- 开始光标位置 -->
-<h3>Hello ~ ${param.username }</h3>
+	<jsp:forward page="/my/hello.jsp"></jsp:forward>
 </body>
 </html>

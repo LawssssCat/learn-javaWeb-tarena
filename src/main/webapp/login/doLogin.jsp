@@ -7,11 +7,11 @@
 <title></title>
 </head>
 <body>
-<%
-	System.out.println("jsp 。。。 ") ; 
-%>
-
 <!-- 开始光标位置 -->
-<h3>Hello ~ ${param.username }</h3>
+	<%
+		//1. 获取用户的登录信息
+		//2. 若登录信息完整，则把登录信息放到 HttpSession
+		//3. 重定向到 list.jsp
+	%>
 </body>
 </html>

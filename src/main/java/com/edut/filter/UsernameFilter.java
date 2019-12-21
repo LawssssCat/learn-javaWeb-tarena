@@ -44,6 +44,8 @@ public class UsernameFilter implements Filter {
 		System.out.println("<<---- "+username+"登录...");
 		// pass the request along the filter chain
 		chain.doFilter(request, response);
+		System.out.println("after dofilter ... username ... ");
+		
 	}
 
 	private FilterConfig filterConfig  ; 
