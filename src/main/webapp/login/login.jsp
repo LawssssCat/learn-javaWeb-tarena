@@ -9,7 +9,7 @@
 <body>
 <!-- 开始光标位置 -->
 		<form action="doLogin.jsp" method="post">
-			username:<input type="text" name="username"><br>
+			username:<input type="text" name="username" value="${sessionScope.username }"><br>
 			<input type="submit" value="登录">
 			
 		</form>
