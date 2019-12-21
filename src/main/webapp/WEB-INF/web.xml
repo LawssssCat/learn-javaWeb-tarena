@@ -9,6 +9,138 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <!-- ============================================== -->
+  <error-page>
+    <exception-type>java.lang.ArithmeticException</exception-type>
+    <location>/my/hello.jsp</location>
+  </error-page>
+  <filter>
+  	<filter-name>EncodingFilter</filter-name>
+    <filter-class>com.edut.filter.EncodingFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>EncodingFilter</filter-name>
+  	<!-- 其中的斜杠（/）表示拦截所有请求（除JSP以外） -->
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  
+  <filter>
+  	<filter-name>loginFilter</filter-name>
+  	<filter-class>com.edut.filter.LoginFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>loginFilter</filter-name>
+  	<url-pattern>/login/*</url-pattern>
+  </filter-mapping>
+    <filter>
+    <display-name>NoCacheFilter</display-name>
+    <filter-name>NoCacheFilter</filter-name>
+    <filter-class>com.edut.filter.NoCacheFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>NoCacheFilter</filter-name>
+    <url-pattern>/cache/*</url-pattern>
+  </filter-mapping>
+  
+  <filter>
+    <display-name>UsernameFilter</display-name>
+    <filter-name>UsernameFilter</filter-name>
+    <filter-class>com.edut.filter.UsernameFilter</filter-class>
+    <init-param>
+      <param-name>username</param-name>
+      <param-value>root</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>UsernameFilter</filter-name>
+    <url-pattern>/my/hello.jsp</url-pattern>
+    <dispatcher>FORWARD</dispatcher>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>INCLUDE</dispatcher>
+    <dispatcher>ERROR</dispatcher>
+  </filter-mapping>
+  <filter>
+    <display-name>PasswordFilter</display-name>
+    <filter-name>PasswordFilter</filter-name>
+    <filter-class>com.edut.filter.PasswordFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>PasswordFilter</filter-name>
+    <url-pattern>/my/hello.jsp</url-pattern>
+  </filter-mapping>
+  <filter>
+    <filter-name>secondFilter</filter-name>
+    <filter-class>com.edut.filter.SeconderFilter</filter-class>
+  </filter>
+  <filter>
+    <filter-name>helloFilter</filter-name>
+    <filter-class>com.edut.filter.HelloFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>helloFilter</filter-name>
+    <url-pattern>/test.jsp</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>secondFilter</filter-name>
+    <url-pattern>/test.jsp</url-pattern>
+  </filter-mapping>
+  
+  
+  <!-- ===================================================== -->
+  <!--  若未登陆，需要重定向的页面 -->
+  <context-param>
+  	<param-name>redirectPage</param-name>
+  	<param-value>/login/login.jsp</param-value>
+  </context-param>
+  <!-- 不需要连接(或检查)的URL列表 -->
+  <context-param>
+  	<param-name>uncheckedUrls</param-name>
+  	<param-value>/login/a.jsp , /login/list.jsp , /login/doLogin.jsp , /login/logout.jsp</param-value>
+  </context-param>
+
+  
+  <!-- 编码 -->
+  <context-param>
+    	<param-name>Encoding</param-name>
+    	<param-value>utf-8</param-value>
+  </context-param>
+  <context-param>
+    <param-name>driver</param-name>
+    <param-value>com.mysql.jdbc.Driver</param-value>
+  </context-param>
+  <context-param>
+    <param-name>jdbcUrl</param-name>
+    <param-value>jdbc:mysql://127.0.0.1:3306/spring?characterEncoding=utf8</param-value>
+  </context-param>
+  <context-param>
+  	<param-name>username</param-name>
+  	<param-value>root</param-value>
+  </context-param>
+  
+  <context-param>
+    <param-name>password</param-name>
+    <param-value>root</param-value>
+  </context-param>
+  
+  <!-- ========================================================= -->
+  <servlet>
+    <servlet-name>hs</servlet-name>
+    <servlet-class>com.edut.HelloServlet</servlet-class>
+    <init-param>
+      <param-name>user</param-name>
+      <param-value>root</param-value>
+    </init-param>
+    <init-param>
+      <param-name>password</param-name>
+      <param-value>root</param-value>
+    </init-param>
+    <load-on-startup>-1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>hs</servlet-name>
+    <url-pattern>/hs</url-pattern>
+  </servlet-mapping>
   <servlet>
     <description></description>
     <display-name>HelloServlet</display-name>
@@ -129,7 +261,5 @@
     <servlet-name>YongHeServlet</servlet-name>
     <url-pattern>/YongHeServlet</url-pattern>
   </servlet-mapping>
-  <listener>
-    <listener-class>cn.edut.listeners.SpringServletContextLinstener</listener-class>
-  </listener>
+
 </web-app>

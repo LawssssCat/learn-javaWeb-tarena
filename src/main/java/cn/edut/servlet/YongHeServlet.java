@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.catalina.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
@@ -50,7 +51,6 @@ public class YongHeServlet extends HttpServlet {
 		//不加这个，有中文，一定乱码
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
-		
 		List<Empolyee> employeeList = yongHeService.getAllEmployee();
 		
 		request.setAttribute("employeeList", employeeList);
