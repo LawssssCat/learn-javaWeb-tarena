@@ -132,7 +132,7 @@
 				Servlet 练习：
 			</td>
 			<td>
-				<a href="index.jsp">index.jsp</a><br>
+				<a href="index1.jsp">index.jsp</a><br>
 				<a href="HelloServlet">01-Hello Servlet!</a><br>
 				<a href="DoorList">02-门店信息</a><br>
 				<a href="table.jsp">03-表单处理</a><br>
@@ -153,6 +153,15 @@
 			</td>
 			<td>
 				<a href="YongHeServlet">YongHeServlet - 显示所有员工【三层架构】</a><br>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				filter
+			</td>
+			<td>
+				<a href="test.jsp">filter</a><br>
+				<a href="my/login.jsp">login - filter </a><br>
 			</td>
 		</tr>
 	</table>

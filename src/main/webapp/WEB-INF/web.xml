@@ -11,39 +11,81 @@
   </welcome-file-list>
   
   
-  <!-- 配置当前 Web 应用的初始化参数 -->
+   <filter>
+    <display-name>UsernameFilter</display-name>
+    <filter-name>UsernameFilter</filter-name>
+    <filter-class>com.edut.filter.UsernameFilter</filter-class>
+    <init-param>
+    	<param-name>username</param-name>
+    	<param-value>root</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>UsernameFilter</filter-name>
+    <url-pattern>/my/hello.jsp</url-pattern>
+  </filter-mapping>
+  <filter>
+    <display-name>PasswordFilter</display-name>
+    <filter-name>PasswordFilter</filter-name>
+    <filter-class>com.edut.filter.PasswordFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>PasswordFilter</filter-name>
+    <url-pattern>/my/hello.jsp</url-pattern>
+  </filter-mapping>
+  
+  
+  <filter>
+    <filter-name>secondFilter</filter-name>
+    <filter-class>com.edut.filter.SeconderFilter</filter-class>
+  </filter>
+  <filter>
+    <filter-name>helloFilter</filter-name>
+    <filter-class>com.edut.filter.HelloFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>helloFilter</filter-name>
+    <url-pattern>/test.jsp</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>secondFilter</filter-name>
+    <url-pattern>/test.jsp</url-pattern>
+  </filter-mapping>
+  
+  
+  
   <context-param>
-  	<param-name>driver</param-name>
-  	<param-value>com.mysql.jdbc.Driver</param-value>
+    <param-name>driver</param-name>
+    <param-value>com.mysql.jdbc.Driver</param-value>
   </context-param>
-	<context-param>
-		<param-name>jdbcUrl</param-name>
-		<param-value>jdbc:mysql://127.0.0.1:3306/spring?characterEncoding=utf8</param-value>
-	</context-param>  
+  <context-param>
+    <param-name>jdbcUrl</param-name>
+    <param-value>jdbc:mysql://127.0.0.1:3306/spring?characterEncoding=utf8</param-value>
+  </context-param>
+  <context-param>
+  	<param-name>password</param-name>
+  	<param-value>root</param-value>
+  </context-param>
+  
   
   
   <servlet>
-  	<servlet-name>hs</servlet-name>
-  	<servlet-class>com.edut.HelloServlet</servlet-class>
-  	<!-- 配置 Servlet 的初始化参数 -->
-  	<init-param>
-  		<param-name>user</param-name>
-  		<param-value>root</param-value>
-  	</init-param>
-  	<init-param>
-  		<param-name>password</param-name>
-  		<param-value>root</param-value>
-  	</init-param>
-  	
-  	<!-- 可以指定 Servlet 被创建的时机 -->
-  	<load-on-startup>-1</load-on-startup>
+    <servlet-name>hs</servlet-name>
+    <servlet-class>com.edut.HelloServlet</servlet-class>
+    <init-param>
+      <param-name>user</param-name>
+      <param-value>root</param-value>
+    </init-param>
+    <init-param>
+      <param-name>password</param-name>
+      <param-value>root</param-value>
+    </init-param>
+    <load-on-startup>-1</load-on-startup>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>hs</servlet-name>
-  	<url-pattern>/hs</url-pattern>
-  </servlet-mapping>  
-  
-  
+    <servlet-name>hs</servlet-name>
+    <url-pattern>/hs</url-pattern>
+  </servlet-mapping>
   <servlet>
     <description></description>
     <display-name>HelloServlet</display-name>
@@ -164,7 +206,5 @@
     <servlet-name>YongHeServlet</servlet-name>
     <url-pattern>/YongHeServlet</url-pattern>
   </servlet-mapping>
-  <listener>
-    <listener-class>cn.edut.listeners.SpringServletContextLinstener</listener-class>
-  </listener>
+ 
 </web-app>
