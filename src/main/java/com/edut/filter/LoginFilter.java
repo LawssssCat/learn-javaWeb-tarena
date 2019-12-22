@@ -53,7 +53,7 @@ public class LoginFilter extends HttpFilter implements Filter {
     	//System.out.println(uri);
     	//System.out.println(contextPath);
     	String webapp = uri.substring(contextPath.length(), uri.length());
-    	System.out.println(webapp);
+    	//System.out.println(webapp);
     	for (String url : urls) {
         	
     		if(webapp.equals(url.trim())) {
