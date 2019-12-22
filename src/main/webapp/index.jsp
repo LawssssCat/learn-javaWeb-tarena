@@ -170,6 +170,14 @@
 				<a href="login/list.jsp">检查用户是否登录？</a><br>
 			</td>
 		</tr>
+		<tr>
+			<td>
+				filter - 练习
+			</td>
+			<td>
+				<a href="authority/authority-manager.jsp">权限管理</a><br>			
+			</td>
+		</tr>
 	</table>
 	
 </div>
