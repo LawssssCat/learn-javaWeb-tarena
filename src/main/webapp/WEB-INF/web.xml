@@ -13,6 +13,12 @@
     <exception-type>java.lang.ArithmeticException</exception-type>
     <location>/my/hello.jsp</location>
   </error-page>
+  <listener>
+  	<listener-class>com.edut.listener.TestAttributeListener</listener-class>
+  </listener>
+  <listener>
+  	<listener-class>com.edut.listener.HelloServletContextListener</listener-class>
+  </listener>
     <filter>
     <display-name>AuthorityFilter</display-name>
     <filter-name>AuthorityFilter</filter-name>

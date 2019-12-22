@@ -179,6 +179,14 @@
 				<a href="authority/authority-manager.jsp">权限管理</a><br>			
 			</td>
 		</tr>
+		<tr>
+			<td>
+				listener ... 
+			</td>
+			<td>
+				<a href="test.jsp">销毁 session</a><br>
+			</td>
+		</tr>
 	</table>
 	
 </div>
