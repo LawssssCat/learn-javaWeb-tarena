@@ -76,11 +76,10 @@ public class AuthorityServlet extends HttpServlet {
 		String username = request.getParameter("username");
 		List<Authority> authorities = new ArrayList<Authority>();
 		String[] authoritiesStr = request.getParameterValues("authority");
-		if(authoritiesStr==null) {
-			authoritiesStr = new String[] {} ;
-		}
-		for (String authorityName : authoritiesStr) {
-			authorities.add(authorityDao.getAuthority(authorityName)) ; 
+		if(authoritiesStr!=null) {
+			for (String authorityName : authoritiesStr) {
+				authorities.add(authorityDao.getAuthority(authorityName)) ; 
+			}
 		}
 		userDao.updateAuthority(username, authorities );
 		

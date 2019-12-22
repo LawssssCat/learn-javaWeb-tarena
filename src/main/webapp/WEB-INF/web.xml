@@ -13,6 +13,27 @@
     <exception-type>java.lang.ArithmeticException</exception-type>
     <location>/my/hello.jsp</location>
   </error-page>
+    <filter>
+    <display-name>AuthorityFilter</display-name>
+    <filter-name>AuthorityFilter</filter-name>
+    <filter-class>com.edut.filter.AuthorityFilter</filter-class>
+    <init-param>
+    	<param-name>nofilter</param-name>
+    	<param-value>/authority-manager.jsp,/list.jsp,/login.jsp,/loginout.jsp </param-value>
+    </init-param>
+    <init-param>
+    	<param-name>profix</param-name>
+    	<param-value>/authority</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>AuthorityFilter</filter-name>
+    <url-pattern>/authority/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+    <dispatcher>INCLUDE</dispatcher>
+    <dispatcher>ERROR</dispatcher>
+  </filter-mapping>
   <filter>
     <filter-name>EncodingFilter</filter-name>
     <filter-class>com.edut.filter.EncodingFilter</filter-class>
@@ -255,4 +276,15 @@
     <servlet-name>AuthorityServlet</servlet-name>
     <url-pattern>/AuthorityServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UserServlet</display-name>
+    <servlet-name>UserServlet</servlet-name>
+    <servlet-class>com.edut.authority.servlet.UserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserServlet</servlet-name>
+    <url-pattern>/UserServlet</url-pattern>
+  </servlet-mapping>
+
 </web-app>

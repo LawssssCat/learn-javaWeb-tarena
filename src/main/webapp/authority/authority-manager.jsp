@@ -12,7 +12,7 @@
 	<h3>权限管理</h3>
 	<!-- AuthorityServlet?method=getAuthorities&&username=xxx -->
 	<form action="${pageContext.request.contextPath }/AuthorityServlet?method=getAuthorities" method="post">
-		username:<input type="text" name="username" > 
+		username:<input type="text" name="username" value="${param.username }" > 
 		<input value="Submint" type="submit" ><br>
 	</form>
 	

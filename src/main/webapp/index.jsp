@@ -175,6 +175,7 @@
 				filter - 练习
 			</td>
 			<td>
+				<a href="authority/list.jsp">访问页面 - {根据：用户权限}</a><br>			
 				<a href="authority/authority-manager.jsp">权限管理</a><br>			
 			</td>
 		</tr>
