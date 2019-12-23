@@ -202,6 +202,7 @@
 				<a href="springmvc/HelloController/testParam5?d1=2019/12/23 11:11:11">接收日期参数。。。。（修改后）</a><br>
 				<a href="springmvc/HelloController/testForward">转发测试，转发到 home</a><br>
 				<a href="springmvc/HelloController/testRedirect">重定向测试，重定向到 home</a><br>
+				<a href="springmvc/HelloController/testModel">响应数据1 ： 通过 Model 参数</a><br>
 			</td>
 		</tr>
 	</table>

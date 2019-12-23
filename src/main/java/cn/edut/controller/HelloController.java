@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import cn.edut.User;
@@ -96,6 +97,16 @@ public class HelloController {
 		System.out.println("===========  testRedirect  ===============");
 		System.out.println("测试请求重定向(redirect) ... ");
 		return "redirect:hello" ; 
+	}
+	
+	@RequestMapping("/testModel")
+	public String testModel(Model model ) {
+		System.out.println("===========  testModel  ===============");
+		System.out.println("===========  testModel  ===============");
+		System.out.println("===========  testModel  ===============");
+		model.addAttribute("name", "刘德华");
+		model.addAttribute("age", 18);
+		return "home" ; 
 	}
 	
 }
