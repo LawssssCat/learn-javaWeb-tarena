@@ -135,7 +135,7 @@
   	<!-- 配置斜杠{/}表示拦截除jsp以外的所有请求
   			即访问jsp不会被拦截，但访问其他资源都会被前端控制器所有拦截 
   			{/*} 表示拦截所有请求(没有例外) -->
-  	<url-pattern>/</url-pattern>
+  	<url-pattern>/springmvc/*</url-pattern>
   </servlet-mapping>
   
   

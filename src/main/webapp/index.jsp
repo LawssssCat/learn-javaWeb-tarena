@@ -177,7 +177,8 @@
 				来自 springmvc的：Hello-World!
 			</td>
 			<td>
-				<a href="springmvc/hello">spring-mvc Hello World!</a>
+				<a href="springmvc/HelloController/hello">spring-mvc Hello World!</a><br>
+				<a href="springmvc/HelloController/testParam2?username=刘备&pwd=123&like=足球&like=篮球">spring-mvc - 控制台打印 username....</a>
 			</td>
 		</tr>
 	</table>
