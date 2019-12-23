@@ -9,6 +9,158 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+
+  <error-page>
+    <exception-type>java.lang.ArithmeticException</exception-type>
+    <location>/my/hello.jsp</location>
+  </error-page>
+  <listener>
+  	<listener-class>com.edut.listener.TestAttributeListener</listener-class>
+  </listener>
+  <listener>
+  	<listener-class>com.edut.listener.HelloServletContextListener</listener-class>
+  </listener>
+    <filter>
+    <display-name>AuthorityFilter</display-name>
+    <filter-name>AuthorityFilter</filter-name>
+    <filter-class>com.edut.filter.AuthorityFilter</filter-class>
+    <init-param>
+    	<param-name>nofilter</param-name>
+    	<param-value>/authority-manager.jsp,/list.jsp,/login.jsp,/loginout.jsp </param-value>
+    </init-param>
+    <init-param>
+    	<param-name>profix</param-name>
+    	<param-value>/authority</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>AuthorityFilter</filter-name>
+    <url-pattern>/authority/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+    <dispatcher>INCLUDE</dispatcher>
+    <dispatcher>ERROR</dispatcher>
+  </filter-mapping>
+  
+  
+  
+  <filter>
+  <!-- 匹配处理乱码过滤器（只针对POST提交的中文 参数乱码 ） -->
+    <filter-name>EncodingFilter</filter-name>
+    <filter-class>com.edut.filter.EncodingFilter</filter-class>
+    <init-param>
+	    <param-name>Encoding</param-name>
+	    <param-value>utf-8</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>EncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  
+  <filter>
+    <filter-name>loginFilter</filter-name>
+    <filter-class>com.edut.filter.LoginFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>loginFilter</filter-name>
+    <url-pattern>/login/*</url-pattern>
+  </filter-mapping>
+  <filter>
+    <display-name>NoCacheFilter</display-name>
+    <filter-name>NoCacheFilter</filter-name>
+    <filter-class>com.edut.filter.NoCacheFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>NoCacheFilter</filter-name>
+    <url-pattern>/cache/*</url-pattern>
+  </filter-mapping>
+  <filter>
+    <display-name>UsernameFilter</display-name>
+    <filter-name>UsernameFilter</filter-name>
+    <filter-class>com.edut.filter.UsernameFilter</filter-class>
+    <init-param>
+      <param-name>username</param-name>
+      <param-value>root</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>UsernameFilter</filter-name>
+    <url-pattern>/my/hello.jsp</url-pattern>
+    <dispatcher>FORWARD</dispatcher>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>INCLUDE</dispatcher>
+    <dispatcher>ERROR</dispatcher>
+  </filter-mapping>
+  <filter>
+    <display-name>PasswordFilter</display-name>
+    <filter-name>PasswordFilter</filter-name>
+    <filter-class>com.edut.filter.PasswordFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>PasswordFilter</filter-name>
+    <url-pattern>/my/hello.jsp</url-pattern>
+  </filter-mapping>
+  <filter>
+    <filter-name>secondFilter</filter-name>
+    <filter-class>com.edut.filter.SeconderFilter</filter-class>
+  </filter>
+  <filter>
+    <filter-name>helloFilter</filter-name>
+    <filter-class>com.edut.filter.HelloFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>helloFilter</filter-name>
+    <url-pattern>/test.jsp</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>secondFilter</filter-name>
+    <url-pattern>/test.jsp</url-pattern>
+  </filter-mapping>
+  <context-param>
+    <param-name>redirectPage</param-name>
+    <param-value>/login/login.jsp</param-value>
+  </context-param>
+  <context-param>
+    <param-name>uncheckedUrls</param-name>
+    <param-value>/login/a.jsp , /login/list.jsp , /login/doLogin.jsp , /login/logout.jsp</param-value>
+  </context-param>
+  
+  <context-param>
+    <param-name>driver</param-name>
+    <param-value>com.mysql.jdbc.Driver</param-value>
+  </context-param>
+  <context-param>
+    <param-name>jdbcUrl</param-name>
+    <param-value>jdbc:mysql://127.0.0.1:3306/spring?characterEncoding=utf8</param-value>
+  </context-param>
+  <context-param>
+    <param-name>username</param-name>
+    <param-value>root</param-value>
+  </context-param>
+  <context-param>
+    <param-name>password</param-name>
+    <param-value>root</param-value>
+  </context-param>
+  <servlet>
+    <servlet-name>hs</servlet-name>
+    <servlet-class>com.edut.HelloServlet</servlet-class>
+    <init-param>
+      <param-name>user</param-name>
+      <param-value>root</param-value>
+    </init-param>
+    <init-param>
+      <param-name>password</param-name>
+      <param-value>root</param-value>
+    </init-param>
+    <load-on-startup>-1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>hs</servlet-name>
+    <url-pattern>/hs</url-pattern>
+  </servlet-mapping>
+
   
   <!-- 配置springmvc前端控制器，将所有请求交给 springmvc来处理 -->
   <!-- 这个类就是 DispatcherServlet -->
@@ -23,7 +175,7 @@
   		<init-param>
   			<!-- param-name： contextConfigLocation 这里不能 写错 -->
   			<param-name>contextConfigLocation</param-name>
-  			<param-value>classpath:day35/springmvc-config.xml</param-value>
+  			<param-value>classpath:springmvc-config.xml</param-value>
   		</init-param>
   	
   </servlet>
@@ -32,7 +184,7 @@
   	<!-- 配置斜杠{/}表示拦截除jsp以外的所有请求
   			即访问jsp不会被拦截，但访问其他资源都会被前端控制器所有拦截 
   			{/*} 表示拦截所有请求(没有例外) -->
-  	<url-pattern>/</url-pattern>
+  	<url-pattern>/springmvc/*</url-pattern>
   </servlet-mapping>
   
   
@@ -40,6 +192,7 @@
   
   
 <!-- ==================  Servlet  ======================== -->  
+
   <servlet>
     <description></description>
     <display-name>HelloServlet</display-name>
@@ -175,12 +328,33 @@
     <servlet-name>YongHeServlet</servlet-name>
     <url-pattern>/YongHeServlet</url-pattern>
   </servlet-mapping>
-  
-  
-  
+
   
   <!-- ===================  listener  ========================= -->
 <!--   <listener>
     <listener-class>cn.edut.listeners.SpringServletContextLinstener</listener-class>
   </listener> -->
+
+  <servlet>
+    <description></description>
+    <display-name>AuthorityServlet</display-name>
+    <servlet-name>AuthorityServlet</servlet-name>
+    <servlet-class>com.edut.authority.servlet.AuthorityServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AuthorityServlet</servlet-name>
+    <url-pattern>/AuthorityServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UserServlet</display-name>
+    <servlet-name>UserServlet</servlet-name>
+    <servlet-class>com.edut.authority.servlet.UserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserServlet</servlet-name>
+    <url-pattern>/UserServlet</url-pattern>
+  </servlet-mapping>
+
+
 </web-app>
