@@ -155,6 +155,7 @@
 				<a href="YongHeServlet">YongHeServlet - 显示所有员工【三层架构】</a><br>
 			</td>
 		</tr>
+
 		<tr>
 			<td>
 				filter
@@ -177,6 +178,30 @@
 			<td>
 				<a href="authority/list.jsp">访问页面 - {根据：用户权限}</a><br>			
 				<a href="authority/authority-manager.jsp">权限管理</a><br>			
+			</td>
+		</tr>
+		<tr>
+			<td>
+				listener ... 
+			</td>
+			<td>
+				<a href="test.jsp">销毁 session</a><br>
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				来自 springmvc的：Hello-World!
+			</td>
+			<td>
+				<a href="springmvc/HelloController/hello">spring-mvc Hello World!</a><br>
+				<a href="springmvc/HelloController/testParam2?username=刘备&pwd=123&like=足球&like=篮球">刘备。。。。 参数：接收属性、打印控制台....</a><br>
+				<a href="springmvc/HelloController/testParam3?name=赵云&age=22&addr=河北">赵云。。。。参数：接收封装对象、打印控制台....</a><br>
+				<a href="springmvc/HelloController/testParam4?username=关羽&pwd=123&like=骑马&like=耍大刀">练习：关羽。。。参数：接收封装对象、打印控制台....</a><br>
+				<a href="springmvc/HelloController/testParam5?d1=2019-12-23 11:11:11">接收日期参数。。。。（400：因为springmvc日期要用2019/12/13 11:11:11）</a><br>
+				<a href="springmvc/HelloController/testParam5?d1=2019/12/23 11:11:11">接收日期参数。。。。（修改后）</a><br>
+				<a href="springmvc/HelloController/testForward">转发测试，转发到 home</a><br>
+				<a href="springmvc/HelloController/testRedirect">重定向测试，重定向到 home</a><br>
 			</td>
 		</tr>
 	</table>

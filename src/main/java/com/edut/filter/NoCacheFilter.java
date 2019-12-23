@@ -32,5 +32,8 @@ public class NoCacheFilter extends HttpFilter implements Filter {
 		chain.doFilter(req, res);
 	}
 
+	@Override
+	public void destroy() {
+	}
 	
 }

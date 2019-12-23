@@ -16,16 +16,20 @@ public class EncodingFilter extends HttpFilter {
 	public void init() throws ServletException {
 		super.init();
 		String par = "Encoding";
-		encoding = getFilterConfig().getServletContext().getInitParameter(par);
+		encoding = getFilterConfig().getInitParameter(par);
 	}
 	
 	@Override
 	protected void doFilter(HttpServletRequest req, HttpServletResponse res, FilterChain chain)
 			throws IOException, ServletException {
 		
-		System.out.println("Encoding"+ " ... " + encoding );
-		req.setCharacterEncoding("utf-8");
+		System.out.println("###########  @@@@@@@@@@  Encoding"+ " ... " + encoding );
+		req.setCharacterEncoding(encoding);
 		
 		chain.doFilter(req, res);
+	}
+	
+	@Override
+	public void destroy() {
 	}
 }
