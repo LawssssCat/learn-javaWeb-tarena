@@ -9,6 +9,7 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+
   <error-page>
     <exception-type>java.lang.ArithmeticException</exception-type>
     <location>/my/hello.jsp</location>
@@ -110,12 +111,60 @@
     <servlet-name>hs</servlet-name>
     <url-pattern>/hs</url-pattern>
   </servlet-mapping>
+
+  
+  <!-- 配置springmvc前端控制器，将所有请求交给 springmvc来处理 -->
+  <!-- 这个类就是 DispatcherServlet -->
+  <servlet>
+  	<servlet-name>springmvc</servlet-name>
+  	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  	
+  	<!-- 配置springmvc核心配置文件的位置，
+  			默认springmvc的配置文件是在WEB-INF目录下，
+  			  默认名字为 springmvc-servlet.xml，
+  			  如果要放在其他目录，则需要制定如下配置； -->
+  		<init-param>
+  			<!-- param-name： contextConfigLocation 这里不能 写错 -->
+  			<param-name>contextConfigLocation</param-name>
+  			<param-value>classpath:springmvc-config.xml</param-value>
+  		</init-param>
+  	
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>springmvc</servlet-name>
+  	<!-- 配置斜杠{/}表示拦截除jsp以外的所有请求
+  			即访问jsp不会被拦截，但访问其他资源都会被前端控制器所有拦截 
+  			{/*} 表示拦截所有请求(没有例外) -->
+  	<url-pattern>/</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+  
+<!-- ==================  Servlet  ======================== -->  
+
   <servlet>
     <description></description>
     <display-name>HelloServlet</display-name>
     <servlet-name>HelloServlet</servlet-name>
     <servlet-class>cn.edut.day30.HelloServlet</servlet-class>
+    
+<!--     配置 Servlet 的初始化参数
+    <init-param>
+    	参数名
+    	<param-name></param-name>	
+    	<param-value></param-value>
+    </init-param>
+     -->
+    
+    <load-on-startup>1</load-on-startup>
+    
   </servlet>
+  <servlet-mapping>
+  	<servlet-name>HelloServlet</servlet-name>
+  	<url-pattern>/helloServlet/*</url-pattern>
+  </servlet-mapping>
   <servlet-mapping>
     <servlet-name>HelloServlet</servlet-name>
     <url-pattern>/HelloServlet</url-pattern>
@@ -230,5 +279,11 @@
     <servlet-name>YongHeServlet</servlet-name>
     <url-pattern>/YongHeServlet</url-pattern>
   </servlet-mapping>
+  
+  
+  <!-- ===================  listener  ========================= -->
+<!--   <listener>
+    <listener-class>cn.edut.listeners.SpringServletContextLinstener</listener-class>
+  </listener> -->
 
 </web-app>
