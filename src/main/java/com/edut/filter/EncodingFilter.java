@@ -23,7 +23,7 @@ public class EncodingFilter extends HttpFilter {
 	protected void doFilter(HttpServletRequest req, HttpServletResponse res, FilterChain chain)
 			throws IOException, ServletException {
 		
-		System.out.println("Encoding"+ " ... " + encoding );
+		System.out.println("###########  @@@@@@@@@@  Encoding"+ " ... " + encoding );
 		req.setCharacterEncoding("utf-8");
 		
 		chain.doFilter(req, res);

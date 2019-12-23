@@ -14,28 +14,28 @@ public class HelloServletContextListener
 implements ServletContextListener , ServletRequestListener , HttpSessionListener {
 	@Override
 	public void contextInitialized(ServletContextEvent sce) {
-		System.out.println("context init ... listener ... ");
+		System.out.println("@@@@@@@@ context init ... listener ... ");
 	}
 	
 	@Override
 	public void contextDestroyed(ServletContextEvent sce) {
-		System.out.println("context destroy ... listener ...");
+		System.out.println("@@@@@@@@ context destroy ... listener ...");
 	}
 	@Override
 	public void requestInitialized(ServletRequestEvent sre) {
-		System.out.println("request init ... listener ... ");
+		System.out.println("@@@@@@@@ request init ... listener ... ");
 	}
 	@Override
 	public void requestDestroyed(ServletRequestEvent sre) {
-		System.out.println("request destroy ... listener ...");
+		System.out.println("@@@@@@@@ request destroy ... listener ...");
 	}
 	@Override
 	public void sessionCreated(HttpSessionEvent se) {
-		System.out.println("session create ... listener ...");
+		System.out.println("@@@@@@@@ session create ... listener ...");
 	}
 	@Override
 	public void sessionDestroyed(HttpSessionEvent se) {
-		System.out.println("session destroy ... listener ...");
+		System.out.println("@@@@@@@@ session destroy ... listener ...");
 	}
 	
 }

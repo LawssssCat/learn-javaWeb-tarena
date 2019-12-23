@@ -1,6 +1,7 @@
 package cn.edut.controller;
 
 import java.util.Arrays;
+import java.util.Date;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,7 +37,7 @@ public class HelloController {
 	}
 	
 	/**
-	 * 3. 包装类型参数绑定：
+	 * 2.2. 包装类型参数绑定：
 	 * /testParam3?name=赵云&age=22&addr=河北
 	 * 如果请求参数过多，如何快熟的接收请求参数的值？
 	 */
@@ -47,5 +48,27 @@ public class HelloController {
 		return "home" ;
 	}
 	
+	/**
+	 * 2.2 包装类型参数绑定
+	 * 	/testParam4?username=关羽&pwd=123&like=骑马&like=耍大刀
+	 * 如何使用包装类型接收上面请求参数的值？
+	 */ 
+	@RequestMapping("/testParam4") 
+	public String testParam4(User u) {
+		System.out.println("===========  testParam4  ===============");
+		System.out.println(u);
+		return "home" ; 
+	}
+	
+	/**
+	 * 3. 日期类型的参数绑定
+	 *  /testParam5?d1=2019-12-23 11:11:11
+	 */
+	@RequestMapping("/testParam5")
+	public String testParam5(Date d1) {
+		System.out.println("===========  testParam5  ===============");
+		System.out.println(d1.toLocaleString());
+		return "home" ; 
+	}
 	
 }
