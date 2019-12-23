@@ -5,6 +5,8 @@ import java.util.Arrays;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import cn.edut.User;
+
 @Controller
 @RequestMapping("/HelloController")
 public class HelloController {
@@ -31,6 +33,18 @@ public class HelloController {
 		System.out.println("pwd:"+pwd) ; 
 		System.out.println("like:"+Arrays.toString(like));
 		return "home" ; 
+	}
+	
+	/**
+	 * 3. 包装类型参数绑定：
+	 * /testParam3?name=赵云&age=22&addr=河北
+	 * 如果请求参数过多，如何快熟的接收请求参数的值？
+	 */
+	@RequestMapping("/testParam3")
+	public String testParam3(User u1) {
+		System.out.println("===========  testParam3  ===============");
+		System.out.println(u1.toString());
+		return "home" ;
 	}
 	
 	

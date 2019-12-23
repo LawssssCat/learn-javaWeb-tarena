@@ -28,14 +28,9 @@ public class NoCacheFilter extends HttpFilter implements Filter {
 		// 用于设定禁止浏览器从本地缓存中调用页面内容，设定后一旦离开页面就无法从Cache中再调出
 		res.setHeader("Pragma", "no-cache");
 		// 放行
-
-		/*
-		 * res.setDateHeader("Expires", -1);
-		 * res.setHeader("Cache-Control", "no-cache");
-		 * res.setHeader("pragma", "no-cache");
-		 */
 		
 		chain.doFilter(req, res);
 	}
 
+	
 }

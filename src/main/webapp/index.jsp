@@ -168,7 +168,24 @@
 				<a href="my/error.jsp">error.jsp</a><br>
 				<a href="cache/a.html">cache</a><br>
 				<a href="encoding/a.jsp">encoding</a><br>
-				<a href="login/a.jsp">检查用户是否登录？</a><br>
+				<a href="login/list.jsp">检查用户是否登录？</a><br>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				filter - 练习
+			</td>
+			<td>
+				<a href="authority/list.jsp">访问页面 - {根据：用户权限}</a><br>			
+				<a href="authority/authority-manager.jsp">权限管理</a><br>			
+			</td>
+		</tr>
+		<tr>
+			<td>
+				listener ... 
+			</td>
+			<td>
+				<a href="test.jsp">销毁 session</a><br>
 			</td>
 		</tr>
 		
@@ -178,7 +195,8 @@
 			</td>
 			<td>
 				<a href="springmvc/HelloController/hello">spring-mvc Hello World!</a><br>
-				<a href="springmvc/HelloController/testParam2?username=刘备&pwd=123&like=足球&like=篮球">spring-mvc - 控制台打印 username....</a>
+				<a href="springmvc/HelloController/testParam2?username=刘备&pwd=123&like=足球&like=篮球">spring-mvc - 参数：接收属性、打印控制台....</a><br>
+				<a href="springmvc/HelloController/testParam3?name=赵云&age=22&addr=河北">spring-mvc - 参数：接收封装对象、打印控制台....</a><br>
 			</td>
 		</tr>
 	</table>
