@@ -16,6 +16,9 @@ public class HelloController {
 	//加路径，
 	@RequestMapping("/hello")
 	public String testHello() {
+		System.out.println("===========  testHello  ===============");
+		System.out.println("===========  testHello  ===============");
+		System.out.println("===========  testHello  ===============");
 		System.out.println("Hello Springmvc...");
 		return "home" ; 
 	}
@@ -69,6 +72,30 @@ public class HelloController {
 		System.out.println("===========  testParam5  ===============");
 		System.out.println(d1.toLocaleString());
 		return "home" ; 
+	}
+	
+	/**
+	 * 测试请求转发(forward)
+	 */
+	@RequestMapping("/testForward")
+	public String testForward() {
+		System.out.println("===========  testForward  ===============");
+		System.out.println("===========  testForward  ===============");
+		System.out.println("===========  testForward  ===============");
+		System.out.println("测试请求转发(forward) ... ");
+		return "forward:hello" ; 
+	}
+	
+	/**
+	 * 测试请求重定向(redirect)
+	 */
+	@RequestMapping("/testRedirect")
+	public String testRedirect() {
+		System.out.println("===========  testRedirect  ===============");
+		System.out.println("===========  testRedirect  ===============");
+		System.out.println("===========  testRedirect  ===============");
+		System.out.println("测试请求重定向(redirect) ... ");
+		return "redirect:hello" ; 
 	}
 	
 }

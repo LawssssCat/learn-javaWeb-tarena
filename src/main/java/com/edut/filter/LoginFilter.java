@@ -77,4 +77,8 @@ public class LoginFilter extends HttpFilter implements Filter {
 		}
 	}
 	
+	@Override
+	public void destroy() {
+	}
+	
 }

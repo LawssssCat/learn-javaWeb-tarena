@@ -57,4 +57,7 @@ public class AuthorityFilter extends HttpFilter implements Filter {
 	   req.getRequestDispatcher(profix + "/login.jsp").forward(req, res);
 	}
 
+   @Override
+	public void destroy() {
+	}
 }

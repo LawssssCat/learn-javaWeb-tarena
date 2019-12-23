@@ -41,14 +41,24 @@
     <dispatcher>INCLUDE</dispatcher>
     <dispatcher>ERROR</dispatcher>
   </filter-mapping>
+  
+  
+  
   <filter>
+  <!-- 匹配处理乱码过滤器（只针对POST提交的中文 参数乱码 ） -->
     <filter-name>EncodingFilter</filter-name>
     <filter-class>com.edut.filter.EncodingFilter</filter-class>
+    <init-param>
+	    <param-name>Encoding</param-name>
+	    <param-value>utf-8</param-value>
+    </init-param>
   </filter>
   <filter-mapping>
     <filter-name>EncodingFilter</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
+  
+  
   <filter>
     <filter-name>loginFilter</filter-name>
     <filter-class>com.edut.filter.LoginFilter</filter-class>
@@ -116,10 +126,7 @@
     <param-name>uncheckedUrls</param-name>
     <param-value>/login/a.jsp , /login/list.jsp , /login/doLogin.jsp , /login/logout.jsp</param-value>
   </context-param>
-  <context-param>
-    <param-name>Encoding</param-name>
-    <param-value>utf-8</param-value>
-  </context-param>
+  
   <context-param>
     <param-name>driver</param-name>
     <param-value>com.mysql.jdbc.Driver</param-value>
